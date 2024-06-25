@@ -1,6 +1,7 @@
 import axios from 'axios';
 import "./App.css"
 import { useState } from 'react';
+import SubscriptionForm from './SubscriptionForm';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -10,11 +11,16 @@ function App() {
       .catch(err => console.log(err));
   };
   return (
-    <div className="App">
-      <h1>Welcome to the Dojo</h1>
-      <h2>Let&apos;s get started</h2>
-      <button onClick={handleClick}>Click Here</button>
-      <p>{message}</p>
+    <div>
+      <div className="App">
+        <SubscriptionForm />
+      </div>
+      <div className="App">
+        <h1>Welcome to the Dojo</h1>
+        <h2>Let&apos;s get started</h2>
+        <button onClick={handleClick}>Click Here</button>
+        <p>{message}</p>
+      </div>
     </div>
   );
 }
